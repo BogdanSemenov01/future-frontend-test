@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import "./App.css"
+import SearchBlock from "./components/SearchBlock/SearchBlock"
+import BooksBoard from "./components/BooksBoard/BooksBoard"
+import { Provider } from "react-redux"
+import { store } from "./redux/store"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import BookAbout from "./components/BookAbout/BookAbout"
+
 
 function App() {
+  const [init, setInit] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Provider store={store}>
+        <div className="App">
+          <SearchBlock />
+          <Routes>
+            <Route path="/" element={<BooksBoard init={init} setInit={setInit}/>}/>
+            <Route path="/:id" element={<BookAbout />}/>
+          </Routes>
+        </div>
+      </Provider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

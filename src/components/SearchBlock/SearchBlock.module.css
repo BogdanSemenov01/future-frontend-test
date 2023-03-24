@@ -1,0 +1,38 @@
+.title {
+  font-size: 38px;
+  margin: 20px 0;
+}
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.input > input {
+  width: 300px;
+  min-width: 200px;
+  height: 30px;
+  margin: 15px 0;
+  padding: 0 5px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.input > button {
+  width: 70px;
+  height: 30px;
+}
+
+.selectors {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+}
+
+hr {
+  margin: 10px 0 0 0;
+}
