@@ -5,7 +5,7 @@ const instance = axios.create({
   
 })
 
-const apiKey = "AIzaSyAW0QpV3IfmbtnFGwofESABsnxC33dk--E"
+const apiKey = process.env.REACT_APP_API_KEY
 const MAX_RESULT = 24
 
 export const BooksApi = {
